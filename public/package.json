@@ -1,0 +1,24 @@
+{
+  "name": "goobies-adventure",
+  "version": "1.0.0",
+  "description": "A simple HTML5 canvas game with global leaderboard",
+  "main": "game.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "game",
+    "canvas",
+    "html5",
+    "javascript",
+    "firebase",
+    "vercel"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.22.0"
+  }
+}
