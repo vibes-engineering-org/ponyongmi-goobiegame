@@ -26,7 +26,7 @@ export default async function Image() {
           overflow: "hidden",
         }}
       >
-        {/* Background gradient with Farcaster purple and electric blue */}
+        {/* Background gradient with retro game colors */}
         <div
           style={{
             position: "absolute",
@@ -34,12 +34,12 @@ export default async function Image() {
             left: 0,
             right: 0,
             bottom: 0,
-            background: "linear-gradient(135deg, #8A63D2 0%, #1E90FF 100%)",
-            opacity: 0.9,
+            background: "linear-gradient(135deg, #2D1B69 0%, #11998E 50%, #38EF7D 100%)",
+            opacity: 0.95,
           }}
         />
 
-        {/* Subtle pattern overlay for depth */}
+        {/* Retro game pattern overlay with coins and geometric shapes */}
         <div
           style={{
             position: "absolute",
@@ -48,7 +48,7 @@ export default async function Image() {
             right: 0,
             bottom: 0,
             backgroundImage:
-              "radial-gradient(circle at 20% 80%, rgba(138, 99, 210, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(30, 144, 255, 0.4) 0%, transparent 50%)",
+              "radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.3) 0%, transparent 40%), radial-gradient(circle at 75% 75%, rgba(56, 239, 125, 0.3) 0%, transparent 40%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 30%)",
           }}
         />
 
@@ -155,6 +155,151 @@ export default async function Image() {
             {PROJECT_DESCRIPTION}
           </p>
 
+          {/* Game elements decoration */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "24px",
+              marginBottom: "32px",
+            }}
+          >
+            {/* Coin icon */}
+            <div
+              style={{
+                width: "48px",
+                height: "48px",
+                borderRadius: "50%",
+                background: "linear-gradient(45deg, #FFD700 0%, #FFA500 100%)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 4px 16px rgba(255, 215, 0, 0.4)",
+                border: "3px solid rgba(255, 255, 255, 0.8)",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "24px",
+                  fontWeight: "900",
+                  color: "#1a1a1a",
+                }}
+              >
+                C
+              </span>
+            </div>
+            
+            {/* Arrow keys indicator */}
+            <div
+              style={{
+                display: "flex",
+                gap: "8px",
+                alignItems: "center",
+              }}
+            >
+              <div
+                style={{
+                  width: "32px",
+                  height: "32px",
+                  backgroundColor: "rgba(255, 255, 255, 0.9)",
+                  borderRadius: "6px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "16px",
+                  fontWeight: "700",
+                  color: "#1a1a1a",
+                  boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+                }}
+              >
+                ↑
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "4px",
+                }}
+              >
+                <div
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    backgroundColor: "rgba(255, 255, 255, 0.9)",
+                    borderRadius: "6px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "16px",
+                    fontWeight: "700",
+                    color: "#1a1a1a",
+                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+                  }}
+                >
+                  ←
+                </div>
+                <div
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    backgroundColor: "rgba(255, 255, 255, 0.9)",
+                    borderRadius: "6px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "16px",
+                    fontWeight: "700",
+                    color: "#1a1a1a",
+                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+                  }}
+                >
+                  →
+                </div>
+              </div>
+              <div
+                style={{
+                  width: "32px",
+                  height: "32px",
+                  backgroundColor: "rgba(255, 255, 255, 0.9)",
+                  borderRadius: "6px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "16px",
+                  fontWeight: "700",
+                  color: "#1a1a1a",
+                  boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+                }}
+              >
+                ↓
+              </div>
+            </div>
+            
+            {/* Enemy danger indicator */}
+            <div
+              style={{
+                width: "48px",
+                height: "48px",
+                borderRadius: "8px",
+                background: "linear-gradient(45deg, #FF4444 0%, #CC0000 100%)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 4px 16px rgba(255, 68, 68, 0.4)",
+                border: "3px solid rgba(255, 255, 255, 0.8)",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "24px",
+                  fontWeight: "900",
+                  color: "#ffffff",
+                }}
+              >
+                !
+              </span>
+            </div>
+          </div>
+
           {/* Farcaster branding element */}
           <div
             style={{
@@ -162,9 +307,9 @@ export default async function Image() {
               alignItems: "center",
               gap: "16px",
               padding: "20px 40px",
-              backgroundColor: "rgba(255, 255, 255, 0.2)",
+              backgroundColor: "rgba(255, 255, 255, 0.15)",
               borderRadius: "100px",
-              border: "3px solid rgba(255, 255, 255, 0.4)",
+              border: "3px solid rgba(255, 255, 255, 0.3)",
               backdropFilter: "blur(10px)",
               boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
             }}
