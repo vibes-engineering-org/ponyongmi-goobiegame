@@ -1,32 +1,30 @@
-import { PROJECT_TITLE } from "~/lib/constants";
+import { NextResponse } from "next/server";
 
 export async function GET() {
-  const appUrl =
-    process.env.NEXT_PUBLIC_URL ||
-    `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
-
-  const config = {
-    accountAssociation: {
-      header:
-        "eyJmaWQiOjEzNTk2LCJ0eXBlIjoiY3VzdG9keSIsImtleSI6IjB4ODE3MzE4RDZmRkY2NkExOGQ4M0ExMzc2QTc2RjZlMzBCNDNjODg4OSJ9",
-      payload:
-        "eyJkb21haW4iOiJmYXJjYXN0ZXItbWluaWFwcC10ZW1wbGF0ZS52ZXJjZWwuYXBwIn0",
-      signature:
-        "MHg5ZjkyZTdkNjRmZTNhNTE4YTEzOTBmZTdlYzAwOWQzODUzZWM2N2RmOTZiYjg1MzAwOGRlZDExNjVmOGE5OGVlNDQyYmI0MDU3OTI0ZmEzOGE3N2NlYWRiYThiMTRiN2IzMTY5N2ZjYWVlZGM3MTE1YWNiMTFmYjc2Y2EzYTc0YzFj",
-    },
-    frame: {
-      version: "1",
-      name: PROJECT_TITLE,
-      iconUrl: `${appUrl}/icon.png`,
-      homeUrl: appUrl,
-      imageUrl: `${appUrl}/frames/hello/opengraph-image`,
-      ogImageUrl: `${appUrl}/frames/hello/opengraph-image`,
-      buttonTitle: "Open",
-      splashImageUrl: `${appUrl}/splash.png`,
-      splashBackgroundColor: "#f7f7f7",
-      webhookUrl: `${appUrl}/api/webhook`,
-    },
+  const appUrl = process.env.NEXT_PUBLIC_URL || "https://localhost:3000";
+  
+  const accountAssociation = {
+    header: "eyJmaWQiOjg2OTk5OSwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDc2ZDUwQjBFMTQ3OWE5QmEyYkQ5MzVGMUU5YTI3QzBjNjQ5QzhDMTIifQ",
+    payload: "eyJkb21haW4iOiJwb255b25nbWktZ29vYmllZ2FtZS52ZXJjZWwuYXBwIn0",
+    signature: "MHg4ZDY3N2FiYTYxNjc1OGNjYjM2YjBkMzYzNWZjMmU5NTI0ZDRkY2I0OWRmOTViYWUzY2I4YzZmN2MyODRiNjMyMzlmNWI5NzI1MWU2Y2E3MDg1MjIzOGFiZDZmNzgyZDAwN2YzNjc2N2I0YWZiMzQyZDBiNjM0YzliYTVhYjhkNzFj"
   };
 
-  return Response.json(config);
+  const frame = {
+    version: "1",
+    name: "Coin Collector Game",
+    iconUrl: `${appUrl}/icon.png`,
+    homeUrl: appUrl,
+    imageUrl: `${appUrl}/og.png`,
+    buttonTitle: "Open",
+    webhookUrl: `${appUrl}/api/webhook`,
+    splashImageUrl: `${appUrl}/splash.png`,
+    splashBackgroundColor: "#555555",
+    primaryCategory: "games",
+    tags: ["arcade", "retro", "pixelart", "collecting", "adventure"]
+  };
+
+  return NextResponse.json({
+    accountAssociation,
+    frame
+  });
 }
